@@ -2,17 +2,17 @@ import React, { Component } from 'react'
 import Row from './items/Row'
 class Rows extends Component {
 
-    createRow = item => {
-        let itemsRow = []
+    createColums = item => {
+        let itemsColums = []
         for (const key in item) {
             if (item.hasOwnProperty(key)) {
-                itemsRow = [...itemsRow, item[key]]
+                itemsColums = [...itemsColums, item[key]]
             }
         }
         return (
             <tr key={item.id}>
             {
-                itemsRow.map(( value ) => {
+                itemsColums.map(( value ) => {
                     return <Row key={`row-${value}`}>{ value }</Row>
                 })
             }
@@ -27,7 +27,7 @@ class Rows extends Component {
             <tbody>
                 {
                     rows && rows.map((item) => {
-                        return this.createRow(item)
+                        return this.createColums(item)
                     })
                 }
             </tbody>
