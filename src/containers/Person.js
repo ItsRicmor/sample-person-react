@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Headers from '../components/Headers'
-import Rows from '../components/Rows'
-export default class Table extends Component {
+import { Table } from '../components/table'
+
+export default class Person extends Component {
     constructor() {
         super();
         this.state = {
@@ -26,15 +26,7 @@ export default class Table extends Component {
         this.setState({ persons });
     }
     render() {
-        const { persons } = this.state
-        const [first] = persons
-        var headers = first ? Object.keys(first) : [];
-        console.log(first)
-        return (
-            <table border="solid 1px" style={{width: '100%'}}>
-                <Headers headers={headers} />
-                <Rows persons={persons} />
-            </table>
-        )
+        const { persons = [] } = this.state
+        return <Table list={persons} />
     }
 }

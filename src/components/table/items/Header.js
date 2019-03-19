@@ -1,9 +1,9 @@
 import React from 'react'
 
 const Header = (props) => {
-    const { id, value } = props
+    const { children } = props
     return (
-        <th key={id}>{value.toUpperCase()}</th>
+        <th scope="col">{children.toUpperCase()}</th>
     )
 }
 

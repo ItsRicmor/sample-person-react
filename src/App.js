@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import Table from './containers/Table'
+import Person from './containers/Person'
 class App extends Component {
   render() {
-    return <Table />
+    return (
+        <Person />
+      )
   }
 }
 
