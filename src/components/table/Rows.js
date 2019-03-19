@@ -12,8 +12,8 @@ class Rows extends Component {
         return (
             <tr key={item.id}>
             {
-                itemsColums.map(( value ) => {
-                    return <Row key={`row-${value}`}>{ value }</Row>
+                itemsColums.map(( colum ) => {
+                    return <Row key={`col-${colum}`}>{colum}</Row>
                 })
             }
             </tr>
