@@ -1,0 +1,50 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 14vh 70vh 15vh;
+    grid-template-areas: 
+        "m m h h h h h h h h h h"
+        "m m c c c c c c c c c c"
+        "f f f f f f f f f f f f";
+    grid-gap: 1px;
+}
+
+.header {
+    grid-area: h;
+    background-color: blue;
+    text-align: center;
+    color: white;
+}
+
+.menu {
+    grid-area: m;
+    background-color: red;
+    text-align: center;
+    color: white;
+}
+
+.content {
+    grid-area: c;
+}
+
+.footer {
+    grid-column: f;
+    background-color: black;
+    text-align: center;
+    color: white;
+}
+
+@media screen and (max-width: 700px) {
+    .header {
+        grid-column: span 6;
+    }
+    
+    .menu {
+        grid-row: 1;
+        grid-column: span 6;
+    }
+    
+    .content {
+        grid-column: span 12;
+    }
+}

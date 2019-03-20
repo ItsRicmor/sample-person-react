@@ -1,38 +1,25 @@
 import React, { Component } from 'react'
-import Row from './items/Row'
+import PropTypes from 'prop-types'
+import { keyGenerator } from '../../utils/KeysGenerator'
+import Columns from './Columns'
+
 class Rows extends Component {
-
-    createColums = item => {
-        let itemsColums = []
-        for (const key in item) {
-            if (item.hasOwnProperty(key)) {
-                itemsColums = [...itemsColums, item[key]]
-            }
-        }
-        return (
-            <tr key={item.id}>
-            {
-                itemsColums.map(( colum ) => {
-                    return <Row key={`col-${colum}`}>{colum}</Row>
-                })
-            }
-            </tr>
-        )
-
-    }
-
     render() {
-        const { rows } = this.props
+        const { list = [] } = this.props
         return (
             <tbody>
                 {
-                    rows && rows.map((item) => {
-                        return this.createColums(item)
+                    list && list.map((item, i) => {
+                        return <Columns key={keyGenerator('cols',i)} item={item}/>
                     })
                 }
             </tbody>
         )
     }
+}
+
+Rows.protoType = {
+    list: PropTypes.array.isRequired
 }
 
 export default Rows

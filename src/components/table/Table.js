@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import Headers from './Headers'
 import Rows from './Rows'
 
@@ -7,9 +8,13 @@ export default class Table extends Component {
         const { list } = this.props
         return (
             <table className="table table-bordered table-hover">
-                <Headers headers={list} />
-                <Rows rows={list} />
+                <Headers list={list} />
+                <Rows list={list} />
             </table>
         )
     }
+}
+
+Table.protoType = {
+    list: PropTypes.array.isRequired
 }
