@@ -1,9 +1,15 @@
+* {
+
+    font-family: helvetica, arial;
+}
+
 .wrapper {
     display: grid;
+    height: 100vh;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 14vh 70vh 15vh;
+    grid-template-rows: 75px auto 75px;
     grid-template-areas: 
-        "m m h h h h h h h h h h"
+        "h h h h h h h h h h h h"
         "m m c c c c c c c c c c"
         "f f f f f f f f f f f f";
     grid-gap: 1px;
@@ -11,14 +17,13 @@
 
 .header {
     grid-area: h;
-    background-color: blue;
     text-align: center;
     color: white;
 }
 
 .menu {
     grid-area: m;
-    background-color: red;
+    background-color: #F8E0BF;
     text-align: center;
     color: white;
 }
@@ -29,9 +34,9 @@
 
 .footer {
     grid-column: f;
-    background-color: black;
+    background-color: #4C5454;
     text-align: center;
-    color: white;
+    color: white;    
 }
 
 @media screen and (max-width: 700px) {

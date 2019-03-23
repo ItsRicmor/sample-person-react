@@ -7,10 +7,10 @@ class Rows extends Component {
     render() {
         const { list = [] } = this.props
         return (
-            <tbody>
+            <tbody >
                 {
                     list && list.map((item, i) => {
-                        return <Columns key={keyGenerator('cols',i)} item={item}/>
+                        return <Columns  key={keyGenerator('cols',i)} item={item}/>
                     })
                 }
             </tbody>

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { keyGenerator } from '../../utils/KeysGenerator'
 import Column from './items/Column'
+import style from './css/Table.module.css'
 
 class Columns extends Component {
 
@@ -19,7 +20,7 @@ class Columns extends Component {
         const { item = {} } = this.props
         const columns = this.getColumns(item)
         return (
-            <tr key={item.id}>
+            <tr className={style.columns} key={item.id}>
                 {
                     columns.map((column, i) => {
                         return <Column key={keyGenerator('col', i)}>{column}</Column>
